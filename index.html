@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Validation Form</title>
+        <style>
+ body{
+    background-color: rgb(94, 20, 20);
+    font-family: Calibri;
+}
+h1{
+    font-weight: bold;
+    color: #cda030;
+    text-align: center;
+}
+table{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #696969;
+    border-collapse: collapse;
+    border: 2px solid rgb(255, 242, 0);
+}
+
+        </style>
+    </head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form name=""myform" method="post" onSubmit="return validate()"></form>"
+        
+        <table align="center" cellpadding="10">
+
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="Fname" maxlength="30"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" name="lname" maxlength="30"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Date of Birth</td>
+                <td><input type="date" name="date" id="date"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email" maxlength="100"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Phone</td>
+                <td><input type="text" name="phone" maxlength="10"/>
+                (11 digit no.)
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td> Male <input type="radio" name="gender" value="male"/>
+                Female <input type="radio" name="gender" value="female"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td> <textarea name="address" rows="4" cols="30"> </textarea>
+                </td>
+            </tr>
+    
+            <tr>
+                <td>Country</td>
+                <td> <select id="country" name="country">
+                    <option value="000" selected="selected">[choose yours]</option>
+                    <option value="008">Cavite City</option>
+                    <option value="012">Kawit</option>
+                    <option value="016">Noveleta</option>
+                    <option value="020">Rosario</option>
+                    <option value="024">City of Imus</option>
+                    <option value="660">City of Dasmarinas</option>
+                    <option value="010">Carmona</option>
+                    <option value="028">Silang</option>
+                    <option value="032">General Mariano Alvarez</option>
+                    <option value="036">General Trias City</option>
+                    <option value="038">Amadeo>/option>
+                    <option value="042">Indang</option>
+                    <option value="054">Tanza</option>
+                    <option value="056">Trece Martires City</option>
+                    <option value="060">Tagaytay City</option>
+                    <option value="062">Alfonso</option>
+                    <option value="064">General Emilio Aguinaldo</option>
+                    <option value="068">Magallanes</option>
+                    <option value="033">Mendez</option>
+                    <option value="045">Naic</option>
+                    <option value="954">Ternate</option>
+                </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Country</td>
+                <td> <input type="text" value="Cavite" name="country" readonly="readonly"/>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="SUBMIT" value="SUBMIT"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    <script type="text/javascript">
+        function validate()
+        {
+            var first= document.forms["myform"]["fname"].value;
+            var last= document.forms["myform"]["lname"].value;
+            var date= document.forms["myform"]["date"].value;
+            var email= document.forms["myform"]["email"].value;
+            var phone= document.forms["myform"]["phone"].value;
+            var gender= document.forms["myform"]["gender"].value;
+            var address= document.forms["myform"]["address"].value;
+            var country= document.forms["myform"]["country"].value;
+           
+            if(first == "")
+            {
+                alert("enter the name");
+                return false;
+            }
+
+            if(!isNaN(first))
+            {
+                alert("name should be in character");
+                return false;
+            }
+
+            if(last = "")
+            {
+                alert("enter the last name");
+            }
+            if(!isNaN(last))
+            {
+                alert("name should be in character");
+                return false;
+            }
+
+            if(date == "")
+            {
+                aler("enter date");
+                return false;
+            }
+            
+            var at = email.indexOf("@");
+            var dot = email.lastIndexOf(".");
+            {
+                alert("Not a valid email");
+                return false;
+            }
+            
+
+        }
+
+    </script>
+</body>
+</html>
